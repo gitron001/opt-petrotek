@@ -1,0 +1,53 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #f8f8f8;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer {
+  background-color: #f8f8f8;
+  padding: 10px;
+  text-align: right;
+}
+
+.fuel-dispensers {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.fuel-dispenser {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.fuel-dispenser.in-use {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
