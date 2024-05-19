@@ -10,7 +10,7 @@ import BackButton from './BackButton';
 
 const PaymentMethodPage: React.FC = () => {
   const { pumpId } = useParams<{ pumpId: string }>();
-  const steps = [`Pump ${pumpId}`, 'Select Payment Method'];
+  const steps = [`Pompa ${pumpId}`, 'Metoda e pageses'];
 
   const [isCashSelected, setIsCashSelected] = useState(false);
   const [cashInserted, setCashInserted] = useState<number | null>(null);
