@@ -35,3 +35,57 @@ main {
 .payment-method:hover {
   transform: scale(1.1);
 }
+
+
+.cash-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.cash-content h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #333;
+}
+
+.cash-image {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.bill-note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bills-image {
+  width: 250px;
+  margin-top: 5px;
+}
+
+.cash-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.back-button {
+  background-color: #2e3b8d;
+  color: white;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}

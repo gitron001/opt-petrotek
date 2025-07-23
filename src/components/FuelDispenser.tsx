@@ -22,10 +22,10 @@ const FuelDispenser: React.FC<FuelDispenserProps> = ({
 
   const handleClick = () => {
     if (highlightRed) {
-      setTooltip("E zene");
+      setTooltip("⛔ Busy");
       setTimeout(() => setTooltip(null), 2000);
     } else if (yellow) {
-      setTooltip("Duke mbushur");
+      setTooltip("⏳ In Use");
       setTimeout(() => setTooltip(null), 2000);
     } else if (!inUse) {
       onSelect(number);
@@ -37,7 +37,7 @@ const FuelDispenser: React.FC<FuelDispenserProps> = ({
     inUse ? 'in-use' : '',
     highlightRed ? 'highlight-red' : '',
     green ? 'green' : '',
-    yellow ? 'yellow' : ''
+    yellow ? 'yellow fueling' : ''
   ].join(' ').trim();
 
   return (

@@ -105,3 +105,82 @@ main {
   z-index: 1000;
   opacity: 0.9;
 }
+
+
+.fuel-dispenser-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.fuel-dispenser {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fuel-dispenser.in-use {
+  background-color: #ddd;
+  cursor: not-allowed;
+  color: #888;
+}
+
+.fuel-dispenser.green {
+  border: 2px solid green;
+  background-color: #e6ffe6;
+  color: #000;
+}
+
+.fuel-dispenser.yellow {
+  border: 2px solid #ffcc00;
+  background-color: #fffbe6;
+  color: #000;
+}
+
+.fuel-dispenser.highlight-red {
+  border: 2px solid red !important;
+  background-color: #ffe5e5 !important;
+  color: #000 !important;
+}
+
+/* ================== ANIMACIONI ================== */
+
+@keyframes fuelPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(255, 204, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
+  }
+}
+
+.fuel-dispenser.fueling {
+  animation: fuelPulse 2s infinite;
+  position: relative;
+}
+
+.fuel-dispenser.fueling::after {
+  content: '⛽';
+  position: absolute;
+  bottom: -20px;
+  font-size: 18px;
+  animation: blinkText 1.5s infinite;
+  color: #ffcc00;
+}
+
+@keyframes blinkText {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
