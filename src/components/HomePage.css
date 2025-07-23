@@ -45,9 +45,63 @@ main {
   border-radius: 10px;
   background-color: #fff;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+/* Default gray style for in-use */
 .fuel-dispenser.in-use {
   background-color: #ddd;
   cursor: not-allowed;
+  color: #888;
+}
+
+/* Green pump style (free and active) */
+.fuel-dispenser.green {
+  border: 2px solid green;
+  background-color: #e6ffe6;
+  color: #000;
+}
+
+/* Yellow pump style (in use but different behavior) */
+.fuel-dispenser.yellow {
+  border: 2px solid #ffcc00;
+  background-color: #fffbe6;
+  color: #000;
+}
+
+/* Red pump style (highlighted busy) */
+.fuel-dispenser.highlight-red {
+  border: 2px solid red !important;
+  background-color: #ffe5e5 !important;
+  color: #000 !important;
+}
+
+/* Priority override: when multiple classes exist, red, yellow, or green should win */
+.fuel-dispenser.highlight-red.in-use,
+.fuel-dispenser.yellow.in-use,
+.fuel-dispenser.green.in-use {
+  background-color: inherit;
+  color: inherit;
+  cursor: not-allowed;
+}
+
+
+.fuel-dispenser-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
+  opacity: 0.9;
 }

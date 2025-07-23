@@ -13,12 +13,12 @@ const HomePage: React.FC = () => {
   };
 
   const dispensers = [
-    { number: 1, inUse: false },
-    { number: 2, inUse: false },
-    { number: 3, inUse: false },
-    { number: 4, inUse: false },
-    { number: 5, inUse: false },
-    { number: 6, inUse: false },
+    { number: 1, inUse: false, green: true },
+    { number: 2, inUse: false, green: true },
+    { number: 3, inUse: true, highlightRed: true },
+    { number: 4, inUse: true, highlightRed: true },
+    { number: 5, inUse: true, yellow: true },
+    { number: 6, inUse: true, yellow: true },
     { number: 7, inUse: true },
     { number: 8, inUse: true },
   ];
@@ -31,11 +31,14 @@ const HomePage: React.FC = () => {
         <div className="fuel-dispensers">
           {dispensers.map((dispenser) => (
             <FuelDispenser
-              key={dispenser.number}
-              number={dispenser.number}
-              inUse={dispenser.inUse}
-              onSelect={handlePumpSelect}
-            />
+            key={dispenser.number}
+            number={dispenser.number}
+            inUse={dispenser.inUse}
+            onSelect={handlePumpSelect}
+            highlightRed={dispenser.highlightRed}
+            green={dispenser.green}
+            yellow={dispenser.yellow}
+          />          
           ))}
         </div>
       </main>
